@@ -1,57 +1,75 @@
-body{
-    background-color: black;
-    color: white;
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
 
-span{
-    color: red;
-}
-a{
-    color:aqua;
-}
-.contagem{
-    background-color:white;
-    padding: 20px 0;
+header {
     text-align: center;
+    padding: 20px 0;
 }
 
-button {
-    padding: 20px 10px;
+.project-info {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contributors {
+    list-style: none;
+    padding: 0;
+}
+
+.contributors li {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.contributors span {
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.objective-button {
+    padding: 15px 20px;
     background-color: #007bff;
     color: #fff;
-    border : none;
+    border: none;
     border-radius: 3px;
     cursor: pointer;
-
+    margin-right: 10px;
+    font-size: 16px;
 }
 
-button:hover{
-    background-color: #4281c4;
-
+.objective-button:hover {
+    background-color: #0056b3;
 }
 
-.objetivos {
-    padding: 20px 10px;
-    background-color: red;
-    color: #fff;
-    border : none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 20px;
-
-}
-.ativo{
-    background-color: green;
-    color:#fff;
-    border-bottom: 3px solid rgb(221, 255, 0);
+.objective-button.active {
+    background-color: #28a745;
 }
 
-.aba-conteudo {
+.objectives-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.objective-content {
     display: none;
-
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin-top: 20px;
 }
 
-.ativa{
+.objective-content.active {
     display: block;
-    color: black;
+}
+
+.counter {
+    font-size: 20px;
+    margin-top: 10px;
 }

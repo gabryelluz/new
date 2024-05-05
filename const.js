@@ -47,4 +47,21 @@ function calculaTempo(tempoObjetivo){
 
     return `${dias} Dias ${horas} Horas ${minutos} Minutos ${segundos} Segundos`;
 
+    // Adiciona eventos aos botões de objetivo
+const objectiveButtons = document.querySelectorAll('.objective-button');
+const objectiveContents = document.querySelectorAll('.objective-content');
+
+objectiveButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        // Remove a classe 'active' de todos os botões e conteúdos
+        objectiveButtons.forEach(btn => btn.classList.remove('active'));
+        objectiveContents.forEach(content => content.classList.remove('active'));
+
+        // Adiciona a classe 'active' ao botão clicado e ao conteúdo correspondente
+        button.classList.add('active');
+        objectiveContents[index].classList.add('active');
+    });
+});
+
+
 }
