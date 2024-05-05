@@ -1,75 +1,61 @@
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: #f0f0f0;
+    color: #333;
     font-family: Arial, sans-serif;
-}
-
-header {
-    text-align: center;
-    padding: 20px 0;
-}
-
-.project-info {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.contributors {
-    list-style: none;
+    margin: 0;
     padding: 0;
 }
 
-.contributors li {
-    font-size: 16px;
-    margin: 5px 0;
+header, footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
-.contributors span {
-    font-weight: bold;
+.contributors {
+    margin-top: 10px;
 }
 
-main {
+.objectives-section {
+    text-align: center;
     padding: 20px;
 }
 
+.objective-buttons {
+    margin-bottom: 20px;
+}
+
 .objective-button {
-    padding: 15px 20px;
-    background-color: #007bff;
+    padding: 10px 20px;
+    background-color: #0056b3;
     color: #fff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    margin-right: 10px;
     font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .objective-button:hover {
-    background-color: #0056b3;
-}
-
-.objective-button.active {
-    background-color: #28a745;
-}
-
-.objectives-content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    background-color: #004080;
 }
 
 .objective-content {
     display: none;
-    text-align: center;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #fff;
     margin-top: 20px;
-}
-
-.objective-content.active {
-    display: block;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .counter {
     font-size: 20px;
     margin-top: 10px;
+}
+
+.active {
+    display: block;
 }

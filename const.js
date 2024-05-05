@@ -1,67 +1,55 @@
-const botoes = document.querySelectorAll('.objetivos');
-const texto = document.querySelectorAll('.aba-conteudo');
-// botoes.lenght
+document.addEventListener('DOMContentLoaded', function () {
+    alert('Bem-vindo pessoal');
 
-for(let i = 0; i < botoes.length; i++) {
-    console.log(i); 
-        botoes[i].onclick = function(){
-            for(let j = 0; j< botoes.length; j++){
-                botoes[j].classList.remove('ativo');
-                texto[j].classList.remove('ativa');
-            }
-        botoes[i].classList.add('ativo');
-        texto[i].classList.add('ativa');
-      
-        }
-//botoes[i].classList.remove('ativo');
-}
+    let nomeUsuario = prompt("Qual o seu nome?");
+    let spanText = document.querySelector('span');
 
-const contadores = document.querySelectorAll('.contador');
+    if (nomeUsuario === null || nomeUsuario === '') {
+        spanText.textContent = "Usuário";
+    } else {
+        spanText.textContent = nomeUsuario;
+    }
 
-const tempoObjetivo1 = new Date ('2024-04-26T00:00:00');
-const tempoObjetivo2 = new Date ('2025-01-17T00:00:00');
-const tempoObjetivo3 = new Date ('2024-12-17T00:00:00');
-const tempoObjetivo4 = new Date ('2024-12-13T00:00:00');
+    console.log("NOME DO USUÁRIO = " + nomeUsuario);
 
-let tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
+    const objectiveButtons = document.querySelectorAll('.objective-button');
+    const objectiveContents = document.querySelectorAll('.objective-content');
 
-for(let i = 0; i < contadores.length; i++){
-    contadores[i].textContent =calculaTempo(tempos[i]);
-}
+    objectiveButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            objectiveButtons.forEach(btn => btn.classList.remove('active'));
+            objectiveContents.forEach(content => content.classList.remove('active'));
 
-function calculaTempo(tempoObjetivo){
-    let tempoAtual = new Date ();
-    let tempoFinal = tempoObjetivo - tempoAtual;
-
-    let segundos = Math.floor(tempoFinal/1000);
-    let minutos = Math.floor(segundos/60);
-    let horas = Math.floor(minutos/60);
-    let dias = Math.floor(horas/24);
-
-    segundos %= 60;
-    minutos %= 60;
-    horas %= 24;
-
-
-                                                                            
-
-    return `${dias} Dias ${horas} Horas ${minutos} Minutos ${segundos} Segundos`;
-
-    // Adiciona eventos aos botões de objetivo
-const objectiveButtons = document.querySelectorAll('.objective-button');
-const objectiveContents = document.querySelectorAll('.objective-content');
-
-objectiveButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        // Remove a classe 'active' de todos os botões e conteúdos
-        objectiveButtons.forEach(btn => btn.classList.remove('active'));
-        objectiveContents.forEach(content => content.classList.remove('active'));
-
-        // Adiciona a classe 'active' ao botão clicado e ao conteúdo correspondente
-        button.classList.add('active');
-        objectiveContents[index].classList.add('active');
+            button.classList.add('active');
+            document.getElementById(button.dataset.target).classList.add('active');
+        });
     });
+
+    const counters = document.querySelectorAll('.counter');
+    const objectiveDates = [
+        new Date('2024-04-26T00:00:00'),
+        new Date('2025-01-17T00:00:00'),
+        new Date('2024-12-17T00:00:00'),
+        new Date('2024-12-13T00:00:00')
+    ];
+
+    counters.forEach((counter, index) => {
+        counter.textContent = calculateTimeRemaining(objectiveDates[index]);
+    });
+
+    function calculateTimeRemaining(targetDate) {
+        const now = new Date();
+        const difference = targetDate - now;
+
+        let seconds = Math.floor(difference / 1000);
+        let minutes = Math.floor(seconds / 60);
+        let hours = Math.floor(minutes / 60);
+        let days = Math.floor(hours / 24);
+
+        seconds %= 60;
+        minutes %= 60;
+        hours %= 24;
+
+        return `${days} Dias ${hours} Horas ${minutes} Minutos ${seconds} Segundos`;
+    }
 });
-
-
-}

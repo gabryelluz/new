@@ -9,49 +9,57 @@
 </head>
 
 <body>
-    <h1>Olá mundo</h1>
-    <h2>Esse é o projeto da aula 13/03</h3>
-        <h3>Programador: Matheus Erick N°: 30</h3>
-        <h3>Programador: Isabelli Dela Coleta N°: 42</h3>
-        <h3>Relator: Sérgio Henrique da Cunha Calazans N°:35</h3>
+    <header>
+        <h1>Bem-vindo ao Projeto</h1>
+        <p class="project-info">Projeto desenvolvido pelos programadores:</p>
+        <ul class="contributors">
+            <li><span>Matheus Erick</span> - N°: 30</li>
+            <li><span>Isabelli Dela Coleta</span> - N°: 42</li>
+            <li><span>Sérgio Henrique da Cunha Calazans</span> - N°:35</li>
+        </ul>
+    </header>
 
-        <hr style="color: white;">
+    <main>
+        <section class="objectives-section">
+            <h2>Objetivos</h2>
+            <div class="objective-buttons">
+                <button class="objective-button active" data-target="objective-1">Conseguir um emprego - Matheus</button>
+                <button class="objective-button" data-target="objective-2">Passar no Vestibular - Sérgio</button>
+                <button class="objective-button" data-target="objective-3">Iniciar meu curso - Isabelli</button>
+                <button class="objective-button" data-target="objective-4">Formados</button>
+            </div>
 
-        <h2>Seja bem vindo <span></span></h2>
+            <div id="objective-1" class="objective-content active">
+                <h3>Correr atrás de vagas</h3>
+                <h2>Tempo para completar o objetivo:</h2>
+                <div class="counter"></div>
+            </div>
 
-        <section class="contagem">
-            <button class="objetivos ativo">Conseguir um emprego - matheus</button>
-            <button class="objetivos"> Passar no Vestibular - Sérgio</button>
-            <button class="objetivos">Iniciar meu curso - Isabelli</button>
-            <button class="objetivos">Formados</button>
+            <div id="objective-2" class="objective-content">
+                <h3>Estudando as disciplinas e conteúdos</h3>
+                <h2>Tempo para completar o objetivo:</h2>
+                <div class="counter"></div>
+            </div>
 
-            <div class="aba-textos">
-                <div class="aba-conteudo ativa">
-                    <h3>Correr atrás de vagas</h3>
-                    <h2>Tempo para completar o objetivo:</h2>
-                    <div class="contador"></div>
-                </div>
-                <div class="aba-conteudo">
-                    <h3>Estudando as disciplinas e conteúdos</h3>
-                    <h2>Tempo para completar o objetivo:</h2>
-                    <div class="contador"></div>
+            <div id="objective-3" class="objective-content">
+                <h3>Objetivo 3</h3>
+                <h2>Tempo para completar o objetivo:</h2>
+                <div class="counter"></div>
+            </div>
 
-                </div>
-                <div class="aba-conteudo">
-                    <h3>ç</h3>
-                    <h2>Tempo para completar o objetivo:</h2>
-                    <div class="contador"></div>
-
-                </div>
-                <div class="aba-conteudo">
-                    <h3>k</h3>
-                    <h2>Tempo para completar o objetivo:</h2>
-                    <div class="contador"></div>
-
-                </div>
+            <div id="objective-4" class="objective-content">
+                <h3>Objetivo 4</h3>
+                <h2>Tempo para completar o objetivo:</h2>
+                <div class="counter"></div>
             </div>
         </section>
-        <script src="cont.js"></script>
+    </main>
+
+    <footer>
+        <p>Seja bem-vindo <span></span></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
